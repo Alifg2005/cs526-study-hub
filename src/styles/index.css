@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Design tokens. Components use only these semantic colors (bg-surface,
+ * text-ink, border-line, ...) so both themes stay consistent.
+ * One accent family (emerald) is used everywhere; success, danger and
+ * warning are reserved for quiz feedback.
+ */
+:root {
+  --bg: oklch(0.975 0.006 165);
+  --surface: oklch(0.995 0.003 165);
+  --surface-2: oklch(0.952 0.01 165);
+  --ink: oklch(0.22 0.02 170);
+  --ink-muted: oklch(0.44 0.02 170);
+  --line: oklch(0.885 0.012 165);
+  --line-strong: oklch(0.78 0.015 165);
+  --accent: oklch(0.47 0.105 163);
+  --accent-hover: oklch(0.41 0.1 163);
+  --accent-contrast: oklch(0.985 0.005 165);
+  --accent-soft: oklch(0.935 0.04 163);
+  --accent-text: oklch(0.4 0.095 163);
+  --success: oklch(0.47 0.12 150);
+  --success-soft: oklch(0.945 0.045 150);
+  --danger: oklch(0.5 0.17 27);
+  --danger-soft: oklch(0.95 0.03 27);
+  --warning: oklch(0.5 0.11 70);
+  --warning-soft: oklch(0.95 0.05 85);
+  --shadow: 0 1px 2px oklch(0.4 0.03 165 / 0.06), 0 8px 24px -12px oklch(0.4 0.04 165 / 0.18);
+}
+
+.dark {
+  --bg: oklch(0.165 0.012 170);
+  --surface: oklch(0.205 0.014 170);
+  --surface-2: oklch(0.245 0.015 170);
+  --ink: oklch(0.94 0.008 165);
+  --ink-muted: oklch(0.74 0.014 165);
+  --line: oklch(0.31 0.015 170);
+  --line-strong: oklch(0.42 0.018 170);
+  --accent: oklch(0.79 0.125 163);
+  --accent-hover: oklch(0.85 0.11 163);
+  --accent-contrast: oklch(0.19 0.03 170);
+  --accent-soft: oklch(0.29 0.05 163);
+  --accent-text: oklch(0.82 0.11 163);
+  --success: oklch(0.8 0.14 150);
+  --success-soft: oklch(0.29 0.06 150);
+  --danger: oklch(0.76 0.13 27);
+  --danger-soft: oklch(0.3 0.06 27);
+  --warning: oklch(0.83 0.12 80);
+  --warning-soft: oklch(0.31 0.06 80);
+  --shadow: 0 1px 2px oklch(0 0 0 / 0.3), 0 10px 30px -14px oklch(0 0 0 / 0.6);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-text: var(--accent-text);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --shadow-card: var(--shadow);
+  --font-sans: "Figtree Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque Variable", "Figtree Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "Cascadia Code", monospace;
+}
+
+@layer base {
+  html {
+    background-color: var(--bg);
+    color: var(--ink);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    min-height: 100dvh;
+    background-color: var(--bg);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01";
+    text-rendering: optimizeLegibility;
+    /* Long code identifiers in prose must wrap instead of overflowing on phones. */
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background: var(--accent-soft);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}

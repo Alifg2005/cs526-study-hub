@@ -1,0 +1,31 @@
+# Private course source materials (never commit or deploy)
+/source-material/
+/lecture-sources/
+/private-materials/
+
+# Original lecture PDFs and temporary extraction files, anywhere in the tree
+*.pdf
+*.PDF
+*.ocr.txt
+*.extracted.txt
+
+# Build output
+/dist/
+/build/
+*.tsbuildinfo
+
+# Dependencies and caches
+/node_modules/
+/.vite/
+/coverage/
+/.vercel/
+
+# Local environment secrets
+.env
+.env.*
+!.env.example
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+*.log
