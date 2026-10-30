@@ -5,7 +5,7 @@ const lecture07Part2: LectureContent = {
   lectureId: "lecture-07-part-2",
   overview: [
     "Part 1 placed fragments in a layout with the <fragment> tag. Part 2 makes them dynamic: the activity's layout provides container views, and fragments are added, replaced and removed at run time through the FragmentManager and FragmentTransaction classes.",
-    "The lecture covers the properties of dynamic fragments, the three-step transaction pattern (acquire the manager, build the transaction, save to the back stack and commit), what addToBackStack changes about the replaced fragment, and why containers should be populated only through transactions.",
+    "These notes cover the properties of dynamic fragments, the three-step transaction pattern (acquire the manager, build the transaction, save to the back stack and commit), what addToBackStack changes about the replaced fragment, and why containers should be populated only through transactions.",
   ],
   objectives: [
     { id: "l07b-o1", text: "Describe dynamic fragments and how they differ from static fragments." },
@@ -27,7 +27,7 @@ const lecture07Part2: LectureContent = {
       id: "dynamic",
       title: "Dynamic fragments",
       blocks: [
-        { type: "paragraph", text: "To modify layouts at run time by adding, removing and replacing fragments, the better approach is to build layouts with container views into which fragments are placed according to the current application state. The lecture describes dynamic fragments as more responsive and flexible than static ones." },
+        { type: "paragraph", text: "To modify layouts at run time by adding, removing and replacing fragments, the better approach is to build layouts with container views into which fragments are placed according to the current application state. Dynamic fragments are more responsive and flexible than static ones." },
         {
           type: "list",
           items: [
@@ -55,7 +55,7 @@ const lecture07Part2: LectureContent = {
       title: "The FragmentManager",
       blocks: [
         { type: "paragraph", text: "Each activity includes a FragmentManager to manage the fragments it contains. It provides the methods used to access, add, remove and replace fragments, and it is where every transaction begins." },
-        { type: "callout", tone: "supplement", title: "Beyond the slides", text: "getSupportFragmentManager() returns the manager from the AndroidX support library, which is what an AppCompatActivity uses. You can find an existing fragment with findFragmentById(R.id.container)." },
+        { type: "callout", tone: "supplement", text: "getSupportFragmentManager() returns the manager from the AndroidX support library, which is what an AppCompatActivity uses. You can find an existing fragment with findFragmentById(R.id.container)." },
       ],
     },
     {
@@ -84,7 +84,7 @@ const lecture07Part2: LectureContent = {
           rows: [
             ["add(containerId, fragment)", "Adds the fragment to the container view"],
             ["replace(containerId, fragment)", "Replaces the fragment currently in the container with the new one"],
-            ["remove(fragment)", "Removes the fragment from the activity (named in the lecture alongside add and replace)"],
+            ["remove(fragment)", "Removes the fragment from the activity"],
             ["addToBackStack(name)", "Saves the transaction so Back can reverse it"],
             ["commit()", "Performs the transaction; it does not run before this call"],
           ],
@@ -103,7 +103,7 @@ const lecture07Part2: LectureContent = {
             ["Pressing Back", "Cannot navigate back to it", "The fragment is resumed when the user navigates back"],
           ],
         },
-        { type: "callout", tone: "exam", title: "Exam angle", text: "Expect a scenario: a fragment is replaced with or without addToBackStack, then the user presses Back. State whether the old fragment was destroyed or stopped, and what the user sees." },
+        { type: "callout", tone: "exam", text: "Practice scenario: a fragment is replaced with or without addToBackStack, then the user presses Back. State whether the old fragment was destroyed or stopped, and what the user sees." },
       ],
     },
     {
@@ -117,7 +117,7 @@ const lecture07Part2: LectureContent = {
           caption: "Illustrative example: an empty container in the activity layout",
           code: "<FrameLayout\n    android:id=\"@+id/fragment_container\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\" />",
         },
-        { type: "callout", tone: "note", text: "The lecture closes with optional app ideas (using the accelerometer for motion sensing, and text to speech) and a reading on DialogFragment." },
+        { type: "callout", tone: "note", text: "Optional ideas for further practice: use the accelerometer for motion sensing, try text to speech, and read about DialogFragment." },
       ],
     },
   ],
@@ -205,7 +205,7 @@ const lecture07Part2: LectureContent = {
       id: "l07b-q02",
       objectiveId: "l07b-o2",
       kind: "concept",
-      question: "Which set of operations does the FragmentManager provide, according to the lecture?",
+      question: "Which set of operations does the FragmentManager provide?",
       options: options("Install, uninstall and update", "Query, insert and delete", "Access, add, remove and replace fragments", "Inflate, measure and draw views"),
       correctOptionId: "c",
       explanation: "The FragmentManager provides the methods used to access, add, remove and replace fragments.",
@@ -214,7 +214,7 @@ const lecture07Part2: LectureContent = {
       id: "l07b-q03",
       objectiveId: "l07b-o2",
       kind: "concept",
-      question: "How many FragmentManagers does the lecture say each activity includes to manage its fragments?",
+      question: "How many FragmentManagers does each activity include to manage its fragments?",
       options: options("One FragmentManager per activity", "One FragmentManager per fragment", "One FragmentManager shared by all apps", "None; FragmentManagers are declared in the manifest"),
       correctOptionId: "a",
       explanation: "Each activity includes a FragmentManager to manage the fragments it contains, and its lifecycle depends on that activity.",
@@ -232,7 +232,7 @@ const lecture07Part2: LectureContent = {
       id: "l07b-q05",
       objectiveId: "l07b-o3",
       kind: "terminology",
-      question: "What does the lecture call each set of changes made to the activity's fragments?",
+      question: "What is each set of changes made to the activity's fragments called?",
       options: options("An intent", "A bundle", "A layout pass", "A transaction"),
       correctOptionId: "d",
       explanation: "Each set of changes, such as adding, removing or replacing fragments, is called a transaction.",
@@ -331,10 +331,10 @@ const lecture07Part2: LectureContent = {
       id: "l07b-q16",
       objectiveId: "l07b-o1",
       kind: "comparison",
-      question: "How does the lecture compare dynamic fragments with static fragments?",
+      question: "How do dynamic fragments compare with static fragments?",
       options: options("Dynamic fragments are slower and less flexible", "Dynamic fragments are more responsive and flexible", "They are identical in behavior", "Static fragments can be replaced at run time, dynamic ones cannot"),
       correctOptionId: "b",
-      explanation: "The lecture states that dynamic fragments are more responsive and flexible than static fragments, because they can change at run time.",
+      explanation: "Dynamic fragments are more responsive and flexible than static fragments, because they can change at run time.",
     },
     {
       id: "l07b-q17",
@@ -349,7 +349,7 @@ const lecture07Part2: LectureContent = {
       id: "l07b-q18",
       objectiveId: "l07b-o5",
       kind: "concept",
-      question: "To modify layouts dynamically by adding, removing and replacing fragments at run time, what kind of layout does the lecture recommend?",
+      question: "To modify layouts dynamically by adding, removing and replacing fragments at run time, what kind of layout is recommended?",
       options: options("Layouts that use container views into which fragments are placed at run time", "Layouts that declare every possible fragment with <fragment> tags", "Layouts with no IDs", "A separate activity for each fragment"),
       correctOptionId: "a",
       explanation: "The better approach is to create layouts with container views and place fragments into them at run time based on application state.",
@@ -367,10 +367,10 @@ const lecture07Part2: LectureContent = {
       id: "l07b-q20",
       objectiveId: "l07b-o2",
       kind: "code",
-      question: "In an AppCompatActivity, which method does the lecture use to acquire the fragment manager?",
+      question: "In an AppCompatActivity, which method acquires the fragment manager?",
       options: options("getFragmentTransaction()", "getPackageManager()", "getSupportFragmentManager()", "getMenuInflater()"),
       correctOptionId: "c",
-      explanation: "The lecture's first step is FragmentManager man = getSupportFragmentManager(); followed by beginTransaction().",
+      explanation: "The first step is FragmentManager man = getSupportFragmentManager(); followed by beginTransaction().",
     },
   ],
 };

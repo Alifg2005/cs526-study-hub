@@ -1,10 +1,9 @@
 import { useMemo } from "react";
-import { ArrowRight, CalendarDays, Clock3, PenLine } from "lucide-react";
+import { ArrowRight, PenLine } from "lucide-react";
 import { LectureCard } from "../components/LectureCard";
 import { ButtonLink } from "../components/ui/Button";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { useProgress } from "../hooks/useProgress";
-import { countdownLabel, midterm } from "../lib/exam";
 import { isReady, lectures } from "../lib/lectures";
 import { REQUIRED_MCQ_COUNT } from "../lib/constants";
 
@@ -32,14 +31,14 @@ export function HomePage() {
 
   return (
     <>
-      <section className="mx-auto grid max-w-6xl gap-10 px-4 pb-14 pt-12 sm:px-6 md:pt-16 lg:grid-cols-[1.35fr_1fr] lg:items-end lg:gap-16">
+      <section className="mx-auto grid max-w-6xl gap-10 px-4 pb-14 pt-12 sm:px-6 md:pt-16">
         <div className="animate-rise">
           <p className="text-sm font-semibold text-accent-text">CS526: Mobile Application Development</p>
           <h1 className="mt-4 text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
-            Midterm revision, one lecture at a time.
+            Course revision, one lecture at a time.
           </h1>
           <p className="mt-5 max-w-[52ch] text-lg leading-relaxed text-ink-muted">
-            Ali Feras Alghanim's review notes, essay practice and 20-question quizzes for every lecture in scope.
+            Ali Feras Alghanim's review notes, essay practice and 20-question quizzes for every lecture.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             {firstReady && (
@@ -54,37 +53,6 @@ export function HomePage() {
             </ButtonLink>
           </div>
         </div>
-
-        <aside
-          aria-label="Midterm details"
-          className="animate-rise rounded-2xl border border-line bg-surface p-6 shadow-card [animation-delay:80ms]"
-        >
-          <div className="flex items-center justify-between gap-3">
-            <h2 className="text-lg font-semibold">{midterm.name}</h2>
-            <span className="rounded-full bg-accent-soft px-3 py-1 text-sm font-semibold text-accent-text">
-              {countdownLabel(midterm.date)}
-            </span>
-          </div>
-          <dl className="mt-5 grid grid-cols-1 gap-4">
-            <div className="flex items-center gap-3">
-              <CalendarDays aria-hidden size={20} strokeWidth={1.75} className="text-ink-muted" />
-              <div>
-                <dt className="sr-only">Date</dt>
-                <dd className="font-medium">{midterm.dateLabel}</dd>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <Clock3 aria-hidden size={20} strokeWidth={1.75} className="text-ink-muted" />
-              <div>
-                <dt className="sr-only">Time</dt>
-                <dd className="font-medium">{midterm.timeLabel}</dd>
-              </div>
-            </div>
-          </dl>
-          <p className="mt-5 border-t border-line pt-4 text-sm leading-relaxed text-ink-muted">
-            Scope: Lectures 1 to 6 and both parts of Lecture 7.
-          </p>
-        </aside>
       </section>
 
       <section aria-labelledby="progress-heading" className="border-y border-line bg-surface-2/60">

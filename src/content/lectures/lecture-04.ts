@@ -4,8 +4,8 @@ import { options } from "../helpers";
 const lecture04: LectureContent = {
   lectureId: "lecture-04",
   overview: [
-    "An Android app is a manifest plus a set of components. This lecture introduces those building blocks (activities, services, content providers, intents and broadcast receivers) and the manifest file that tells the system about them.",
-    "It then covers externalized resources, alternative resources selected by configuration qualifiers, and how code and XML access resources through R. A reading section explains how Android ranks and kills processes to manage memory, and the lecture ends with the four steps for implementing an activity.",
+    "An Android app is a manifest plus a set of components. These notes introduce those building blocks (activities, services, content providers, intents and broadcast receivers) and the manifest file that tells the system about them.",
+    "It then covers externalized resources, alternative resources selected by configuration qualifiers, and how code and XML access resources through R. They also explain how Android ranks and kills processes to manage memory, and finish with the four steps for implementing an activity.",
   ],
   objectives: [
     { id: "l04-o1", text: "Identify the application components and the role of each." },
@@ -32,7 +32,7 @@ const lecture04: LectureContent = {
       id: "components",
       title: "The building blocks of an Android app",
       blocks: [
-        { type: "paragraph", text: "The lecture lists activities, services, content providers, intents, broadcast receivers, widgets and notifications as the building blocks. An Android application is a manifest XML file plus a set of these components." },
+        { type: "paragraph", text: "The building blocks include activities, services, content providers, intents, broadcast receivers, widgets and notifications. An Android application is a manifest XML file plus a set of these components." },
         {
           type: "table",
           columns: ["Component", "What it is", "Base class / example"],
@@ -44,7 +44,7 @@ const lecture04: LectureContent = {
             ["Broadcast Receiver", "An intent listener for event-driven applications", "BroadcastReceiver"],
           ],
         },
-        { type: "callout", tone: "exam", title: "Exam angle", text: "Be ready to define each component in one line and name its base class. Remember that a service has no UI, and a content provider identifies data by URI and MIME type." },
+        { type: "callout", tone: "exam", text: "Practice defining each component in one line and naming its base class. Remember that a service has no UI, and a content provider identifies data by URI and MIME type." },
       ],
     },
     {
@@ -100,7 +100,7 @@ const lecture04: LectureContent = {
         },
         {
           type: "table",
-          caption: "Configuration qualifiers from the lecture",
+          caption: "Common configuration qualifiers",
           columns: ["Configuration", "Example qualifiers"],
           rows: [
             ["Screen size", "small, normal, large, xlarge"],
@@ -137,7 +137,7 @@ const lecture04: LectureContent = {
     },
     {
       id: "process",
-      title: "Process lifecycle and priority (reading)",
+      title: "Process lifecycle and priority",
       blocks: [
         { type: "paragraph", text: "Android apps have limited control over their own lifecycles. The runtime manages memory and processes; by default each app runs in its own process with its own runtime instance. To keep the experience smooth, Android aggressively manages resources and may kill processes without warning to free memory for higher-priority apps." },
         { type: "paragraph", text: "An app's priority equals that of its highest-priority component. Android keeps an importance hierarchy, listed here from most to least important." },
@@ -299,7 +299,7 @@ const lecture04: LectureContent = {
       id: "l04-q05",
       objectiveId: "l04-o1",
       kind: "concept",
-      question: "Besides filling a screen, the lecture says an activity can also:",
+      question: "Besides filling a screen, an activity can also:",
       options: options("Run permanently in the background with no lifecycle at all", "Be faceless, appear in a floating window, or return a value", "Replace the Linux kernel", "Exist without being declared in the manifest"),
       correctOptionId: "b",
       explanation: "An activity typically corresponds to one screen, but it can be faceless, floating, or return a value to its caller.",
@@ -326,7 +326,7 @@ const lecture04: LectureContent = {
       id: "l04-q08",
       objectiveId: "l04-o3",
       kind: "concept",
-      question: "Why does the lecture recommend externalizing resources such as strings and images?",
+      question: "Why is it good practice to externalize resources such as strings and images?",
       options: options("It makes the APK impossible to decompile, protecting strings and images from being copied", "It lets you supply alternative resources for different locales and device configurations", "It removes the need for a manifest", "It forces every string to be written in English so that translation tools can process it"),
       correctOptionId: "b",
       explanation: "Keeping resources out of the code is good practice and makes it possible to provide alternatives for languages, screen sizes and orientations.",

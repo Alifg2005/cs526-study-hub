@@ -78,7 +78,8 @@ export default lecture08;
 ```
 
 - Write in your own words. Do not paste slide text.
-- Use `callout` with tone `"exam"` for exam tips and `"supplement"` for anything beyond the slides.
+- Use `callout` with tone `"exam"` for practice tips (rendered as "Practice angle", never predicting exam questions) and `"supplement"` for supplementary explanations (rendered as "Good to know").
+- State facts directly. Do not refer to "the lecture" or "the slides".
 - Code samples are short, freshly written, and captioned "Illustrative example: ...".
 - No em dashes or en dashes.
 

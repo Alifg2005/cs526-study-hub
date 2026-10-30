@@ -23,7 +23,6 @@ export function makeMeta(overrides: Partial<LectureMeta> = {}): LectureMeta {
     title: "Fixture Lecture",
     description: "A fixture lecture used by tests.",
     status: "available",
-    inMidtermScope: false,
     ...overrides,
   };
 }

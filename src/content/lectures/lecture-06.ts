@@ -4,7 +4,7 @@ import { options } from "../helpers";
 const lecture06: LectureContent = {
   lectureId: "lecture-06",
   overview: [
-    "An activity does not simply run and stop. From the moment it is created until it is destroyed it moves through a set of states, and Android notifies it of every transition by calling a lifecycle method. This lecture defines that lifecycle, the activity stack it operates on, and the four states an activity can be in.",
+    "An activity does not simply run and stop. From the moment it is created until it is destroyed it moves through a set of states, and Android notifies it of every transition by calling a lifecycle method. These notes define that lifecycle, the activity stack it operates on, and the four states an activity can be in.",
     "It then explains each of the seven callbacks, from onCreate to onDestroy, the three nested lifetimes they bracket, and supporting topics: building UIs declaratively or programmatically, strings.xml, the manifest elements that launch an activity, keyboard input types and Toast messages.",
   ],
   objectives: [
@@ -40,7 +40,7 @@ const lecture06: LectureContent = {
             "The previous activity stays below it and does not return to the foreground until the new activity exits.",
           ],
         },
-        { type: "callout", tone: "note", title: "The lecture's scenario", text: "A user is reading email when a phone call arrives. Taking the call switches activities; when the call ends, the user returns to the email. Each switch is a lifecycle transition." },
+        { type: "callout", tone: "note", title: "Example scenario", text: "A user is reading email when a phone call arrives. Taking the call switches activities; when the call ends, the user returns to the email. Each switch is a lifecycle transition." },
       ],
     },
     {
@@ -91,8 +91,8 @@ const lecture06: LectureContent = {
             ["The activity finishes", "onPause, onStop, onDestroy"],
           ],
         },
-        { type: "callout", tone: "supplement", title: "Beyond the slides", text: "A common configuration change is rotating the device. By default the activity is destroyed and recreated, so it runs onPause, onStop and onDestroy, then onCreate, onStart and onResume. This is why saving state between transitions matters." },
-        { type: "callout", tone: "exam", title: "Exam angle", text: "Be ready to trace the callbacks for a scenario, such as pressing Home and returning. Write the sequence in order and name the state after each step." },
+        { type: "callout", tone: "supplement", text: "A common configuration change is rotating the device. By default the activity is destroyed and recreated, so it runs onPause, onStop and onDestroy, then onCreate, onStart and onResume. This is why saving state between transitions matters." },
+        { type: "callout", tone: "exam", text: "Practice tracing the callbacks for a scenario, such as pressing Home and returning. Write the sequence in order and name the state after each step." },
       ],
     },
     {
@@ -108,7 +108,7 @@ const lecture06: LectureContent = {
             ["Foreground", "onResume()", "onPause()", "The activity is in front of all others and interacting with the user"],
           ],
         },
-        { type: "paragraph", text: "The foreground lifetime sits inside the visible lifetime, which sits inside the entire lifetime. The lecture stresses that saving the data the application uses between state transitions is fundamental." },
+        { type: "paragraph", text: "The foreground lifetime sits inside the visible lifetime, which sits inside the entire lifetime. Saving the data the application uses between state transitions is fundamental." },
       ],
     },
     {
@@ -157,7 +157,7 @@ const lecture06: LectureContent = {
           caption: "Illustrative example: show a short Toast",
           code: "Toast.makeText(this, \"Saved\", Toast.LENGTH_SHORT).show();",
         },
-        { type: "paragraph", text: "The duration is Toast.LENGTH_SHORT or Toast.LENGTH_LONG. Forgetting to call show() is a common reason a Toast never appears. As in earlier lectures, widgets are reached from code by giving them an ID and calling findViewById(R.id.thatId)." },
+        { type: "paragraph", text: "The duration is Toast.LENGTH_SHORT or Toast.LENGTH_LONG. Forgetting to call show() is a common reason a Toast never appears. Widgets are reached from code by giving them an ID and calling findViewById(R.id.thatId)." },
       ],
     },
   ],
@@ -239,7 +239,7 @@ const lecture06: LectureContent = {
       id: "l06-q01",
       objectiveId: "l06-o1",
       kind: "terminology",
-      question: "Which definition of the activity lifecycle matches the lecture's more formal wording?",
+      question: "Which is the formal definition of the activity lifecycle?",
       options: options("A list of the layouts the activity can display, ordered by when each is inflated on screen", "A directed graph of all the states an activity can be in and the callbacks for each transition", "The order in which activities are declared in the manifest and launched by the system", "The time an activity spends on screen"),
       correctOptionId: "b",
       explanation: "Formally, the lifecycle is a directed graph of states with callbacks associated with transitioning from each state to the next.",
@@ -374,7 +374,7 @@ const lecture06: LectureContent = {
       id: "l06-q16",
       objectiveId: "l06-o5",
       kind: "distinction",
-      question: "According to the lecture, how do Android apps typically divide work between XML and Java?",
+      question: "How do Android apps typically divide work between XML and Java?",
       options: options("XML handles events and user interaction; Java defines the layouts and resources", "XML defines layouts and resources; Java manages events and user interaction", "Only XML is used", "Only Java is used"),
       correctOptionId: "b",
       explanation: "Apps typically use both: the declarative XML approach for layouts and resources, and the programmatic Java approach for events and interaction.",
@@ -386,7 +386,7 @@ const lecture06: LectureContent = {
       question: "Why is android:text=\"@string/hello_world\" recommended over hardcoding the text in the layout?",
       options: options("It makes the text larger", "It is required for a TextView to compile, because hardcoded text causes a build error", "It separates UI text from the layout and keeps strings in one app-wide resource file", "It hides the text from screen readers so the layout loads faster on older devices"),
       correctOptionId: "c",
-      explanation: "Strings in res/values/strings.xml are available app-wide and keep UI design separate from functionality, which the lecture calls good software engineering.",
+      explanation: "Strings in res/values/strings.xml are available app-wide and keep UI design separate from functionality, which is good software engineering.",
     },
     {
       id: "l06-q18",

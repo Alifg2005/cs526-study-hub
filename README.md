@@ -1,12 +1,12 @@
 # CS526 Study Hub
 
-An independent study website for **CS526: Mobile Application Development**, built by **Ali Feras Alghanim** to prepare for the **Midterm Examination on Monday, October 26, 2026 at 12:00 PM**.
+An independent study website for **CS526: Mobile Application Development**, built by **Ali Feras Alghanim** for course revision.
 
 > Independent student study resource for CS526. Course materials remain the property of their respective rights holders. This website provides original study notes and practice questions and is not an official university website.
 
 ## Features
 
-- **Lecture reviews** for all eight midterm modules: overview, learning objectives, key terms, explanations, comparison tables, processes, exam takeaways. Supplementary explanations are labeled "Beyond the slides".
+- **Lecture reviews** for all eight lecture modules: overview, learning objectives, key terms, explanations, comparison tables, processes, key takeaways. Supplementary explanations are labeled "Good to know".
 - **Essay and short-answer practice** with model answers, keywords, expected concepts and what each question assesses, per lecture and on a combined `/essays` page.
 - **Interactive quizzes**: exactly 20 multiple-choice questions per lecture, one at a time, progress bar, previous/next, jump-to overview, answers kept while navigating, confirmation before submitting with unanswered questions, score out of 20 with percentage, per-question review with explanations, filters, and retake. Option order is shuffled on every attempt.
 - **Progress** saved in the browser: best quiz scores and revision-checklist items.
@@ -14,7 +14,7 @@ An independent study website for **CS526: Mobile Application Development**, buil
 - Responsive from 375px phones to desktop; keyboard accessible; reduced-motion aware.
 - Honest "Coming soon" states for any lecture that has not been processed yet.
 
-### Lectures in the midterm scope
+### Lectures
 
 | # | Lecture | Status |
 | --- | --- | --- |

@@ -37,7 +37,7 @@ export function LecturePage() {
   const toc = [
     { id: "key-terms", title: "Key terms" },
     ...content.sections.map((s) => ({ id: s.id, title: s.title })),
-    { id: "takeaways", title: "Exam takeaways" },
+    { id: "takeaways", title: "Key takeaways" },
     { id: "essay-prep", title: "Essay and short answer" },
     { id: "checklist", title: "Revision checklist" },
   ];
@@ -125,7 +125,7 @@ export function LecturePage() {
           ))}
 
           <section aria-labelledby="takeaways" className="mt-14 rounded-2xl bg-accent-soft/50 p-5 sm:p-7">
-            <SectionHeading id="takeaways">Exam takeaways</SectionHeading>
+            <SectionHeading id="takeaways">Key takeaways</SectionHeading>
             <ol className="mt-5 grid grid-cols-1 gap-3">
               {content.takeaways.map((t, i) => (
                 <li key={t} className="grid grid-cols-[1.75rem_minmax(0,1fr)] gap-2 leading-relaxed">
@@ -141,7 +141,7 @@ export function LecturePage() {
           <section aria-labelledby="essay-prep" className="mt-14">
             <SectionHeading id="essay-prep">Essay and short answer</SectionHeading>
             <p className="mt-2 text-ink-muted">
-              Practice questions written from the lecture. They are for preparation and are not guaranteed exam
+              Practice questions on this topic. They are for preparation and are not guaranteed exam
               questions. Try answering before opening the model answer.
             </p>
             <div className="mt-5 grid grid-cols-1 gap-4">

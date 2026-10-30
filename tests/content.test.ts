@@ -12,7 +12,7 @@ describe("real lecture content", () => {
     expect(report.errors).toEqual([]);
   });
 
-  it("registers the eight announced midterm modules in order", () => {
+  it("registers the eight lecture modules in order", () => {
     expect(lectures.map((l) => l.meta.id)).toEqual([
       "lecture-01",
       "lecture-02",
@@ -23,7 +23,6 @@ describe("real lecture content", () => {
       "lecture-07-part-1",
       "lecture-07-part-2",
     ]);
-    expect(lectures.every((l) => l.meta.inMidtermScope)).toBe(true);
   });
 
   it.each(lectures.filter(isReady).map((l) => [l.meta.id, l] as const))(

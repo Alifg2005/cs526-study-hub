@@ -18,13 +18,11 @@ function renderAt(path: string) {
 }
 
 describe("routes", () => {
-  it("renders the home page with owner, course, exam details and every lecture", () => {
+  it("renders the home page with owner, course and every lecture", () => {
     renderAt("/");
     expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
     expect(screen.getAllByText(/Ali Feras Alghanim/).length).toBeGreaterThan(0);
     expect(screen.getByText("CS526: Mobile Application Development")).toBeInTheDocument();
-    expect(screen.getByText("Monday, October 26, 2026")).toBeInTheDocument();
-    expect(screen.getByText("12:00 PM")).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: /^Review / })).toHaveLength(8);
     expect(screen.getAllByRole("link", { name: /^Quiz on / })).toHaveLength(8);
     expect(screen.getByText(EDUCATIONAL_NOTICE)).toBeInTheDocument();

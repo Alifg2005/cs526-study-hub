@@ -4,7 +4,7 @@ import { options } from "../helpers";
 const lecture01: LectureContent = {
   lectureId: "lecture-01",
   overview: [
-    "This opening lecture explains why mobile development is treated as a new paradigm rather than desktop programming on a smaller screen. It weighs what mobile devices make possible against the constraints developers must design around.",
+    "These notes explain why mobile development is treated as a new paradigm rather than desktop programming on a smaller screen. It weighs what mobile devices make possible against the constraints developers must design around.",
     "It then compares mobile web apps with installed native apps, introduces Android as a Linux-based, open software stack managed by the Open Handset Alliance, and walks through the tools and project structure you use to build a first Android app.",
   ],
   objectives: [
@@ -47,7 +47,7 @@ const lecture01: LectureContent = {
             ["Many apps are free or low cost", "A wide range of platforms and device configurations"],
           ],
         },
-        { type: "callout", tone: "note", text: "The lecture lists limited bandwidth as a challenge that is now almost solved. Battery, memory, screen size and input remain the constraints that most shape app design." },
+        { type: "callout", tone: "note", text: "Limited bandwidth was long a major challenge, but it is now almost solved. Battery, memory, screen size and input remain the constraints that most shape app design." },
       ],
     },
     {
@@ -56,7 +56,7 @@ const lecture01: LectureContent = {
       blocks: [
         {
           type: "table",
-          columns: ["Category", "Examples from the lecture"],
+          columns: ["Category", "Examples"],
           rows: [
             ["Free and open-source", "Android, MeeGo, Symbian"],
             ["Manufacturer-built proprietary", "Apple iOS, RIM BlackBerry OS, HP WebOS"],
@@ -80,7 +80,7 @@ const lecture01: LectureContent = {
             ["Weaknesses", "Few and weak GUI controls; cannot use local resources such as files or devices; hard to write because it needs many technologies; designed for large displays and a mouse", "No universal access: installed one phone at a time and tied to one platform; updates are harder because the user must install them"],
           ],
         },
-        { type: "callout", tone: "exam", title: "Exam angle", text: "Expect a comparison question. Organize your answer around access, updates, user interface controls, access to local resources, ease of development, and the target screen." },
+        { type: "callout", tone: "exam", text: "Practice a comparison answer organized around access, updates, user interface controls, access to local resources, ease of development, and the target screen." },
       ],
     },
     {
@@ -96,7 +96,7 @@ const lecture01: LectureContent = {
             "Not a hardware platform. Components of the underlying OS are written in C or C++, while user applications are written in Java (and today Kotlin).",
           ],
         },
-        { type: "paragraph", text: "The lecture describes Android as an open platform with these parts: a hardware reference design describing the capabilities a device needs; a Linux kernel for the low-level hardware interface, memory management and process control; open-source libraries such as SQLite, WebKit, OpenGL and a media manager; a small, efficient runtime with core libraries; an application framework that exposes system services such as the window manager, content providers, location manager and telephony; a user interface framework; preinstalled applications; and the SDK." },
+        { type: "paragraph", text: "Android is an open platform with these parts: a hardware reference design describing the capabilities a device needs; a Linux kernel for the low-level hardware interface, memory management and process control; open-source libraries such as SQLite, WebKit, OpenGL and a media manager; a small, efficient runtime with core libraries; an application framework that exposes system services such as the window manager, content providers, location manager and telephony; a user interface framework; preinstalled applications; and the SDK." },
       ],
     },
     {
@@ -115,7 +115,7 @@ const lecture01: LectureContent = {
         { type: "paragraph", text: "OHA members span hardware vendors (Intel, Texas Instruments, Qualcomm, Nvidia), software companies (Google, eBay), handset manufacturers (Motorola, HTC, Sony Ericsson, Samsung) and mobile operators (T-Mobile, Telefonica, Vodafone)." },
         {
           type: "table",
-          caption: "Android versions shown in the lecture",
+          caption: "Selected Android versions",
           columns: ["Version", "API level", "Name"],
           rows: [
             ["4.0", "", "Ice Cream Sandwich"],
@@ -127,7 +127,7 @@ const lecture01: LectureContent = {
             ["9.0", "28", "Pie"],
           ],
         },
-        { type: "callout", tone: "supplement", title: "Beyond the slides", text: "An API level is the integer that identifies the framework API a platform version offers. Apps declare the minimum API level they support, which is why the version and API level appear together." },
+        { type: "callout", tone: "supplement", text: "An API level is the integer that identifies the framework API a platform version offers. Apps declare the minimum API level they support, which is why the version and API level appear together." },
       ],
     },
     {
@@ -142,10 +142,10 @@ const lecture01: LectureContent = {
             "Shared data and inter-application communication.",
             "No licensing fees, which enables low-cost devices.",
             "Not created for a single device, and no certification needed to become a developer.",
-            "The Android Market (today Google Play) for distributing and monetizing apps, which the slides describe as having no approval process.",
+            "The Android Market (today Google Play) for distributing and monetizing apps, which was described as having no approval process.",
           ],
         },
-        { type: "paragraph", text: "SDK features named in the lecture include hardware access (camera, GPS), data transfer over Wi-Fi, Google Maps and location-based services, background services, SQLite storage, shared data and inter-application communication, widgets and live wallpaper, cloud-to-device messaging, and optimized memory and process management." },
+        { type: "paragraph", text: "SDK features include hardware access (camera, GPS), data transfer over Wi-Fi, Google Maps and location-based services, background services, SQLite storage, shared data and inter-application communication, widgets and live wallpaper, cloud-to-device messaging, and optimized memory and process management." },
         { type: "paragraph", text: "These qualities made Android a low-cost, customizable, lightweight OS that companies adopt instead of building their own, which is why it now also runs on televisions, game consoles and other electronics." },
       ],
     },
@@ -280,7 +280,7 @@ const lecture01: LectureContent = {
       id: "l01-q03",
       objectiveId: "l01-o2",
       kind: "terminology",
-      question: "Which group of operating systems does the lecture classify as free and open source?",
+      question: "Which group of mobile operating systems is free and open source?",
       options: options("Android, MeeGo and Symbian", "iOS, WebOS and BlackBerry OS", "Windows Phone 7 and Windows Mobile", "Android, iOS and Windows Mobile"),
       correctOptionId: "a",
       explanation: "Android, MeeGo and Symbian are the free and open-source examples. The other groups mix in proprietary systems.",
@@ -319,7 +319,7 @@ const lecture01: LectureContent = {
       question: "Which statement about Android is correct?",
       options: options("Android is a hardware platform that Google designs and manufactures for the Open Handset Alliance", "Android is a proprietary operating system that manufacturers must license for each device they ship", "Android is a Linux-based software stack that includes an OS, middleware, applications and an SDK", "Android is a programming language that replaced Java"),
       correctOptionId: "c",
-      explanation: "The lecture defines Android as a software stack built on Linux and explicitly states that it is not a hardware platform.",
+      explanation: "Android is a software stack built on Linux. It is not a hardware platform.",
     },
     {
       id: "l01-q08",
@@ -343,10 +343,10 @@ const lecture01: LectureContent = {
       id: "l01-q10",
       objectiveId: "l01-o4",
       kind: "concept",
-      question: "In which languages are the underlying Android OS components and typical user applications written, according to the lecture?",
+      question: "In which languages are the underlying Android OS components and typical user applications traditionally written?",
       options: options("OS components in Java; applications in C", "OS components in C or C++; applications in Java", "Both in Swift", "OS components in Kotlin; applications in Objective-C"),
       correctOptionId: "b",
-      explanation: "The lecture states that the components of the underlying OS are written in C or C++, while user applications are built in Java (Kotlin is also used today).",
+      explanation: "The components of the underlying OS are written in C or C++, while user applications are built in Java (Kotlin is also used today).",
     },
     {
       id: "l01-q11",
@@ -379,7 +379,7 @@ const lecture01: LectureContent = {
       id: "l01-q14",
       objectiveId: "l01-o5",
       kind: "terminology",
-      question: "Which of these is an open-source library the lecture lists as part of the Android platform?",
+      question: "Which of these is an open-source library that is part of the Android platform?",
       options: options("SQLite", "Gradle", "Android Studio", "AndroidManifest"),
       correctOptionId: "a",
       explanation: "SQLite, WebKit, OpenGL and a media manager are the open-source libraries named. Gradle and Android Studio are development tools, and the manifest is a project file.",
@@ -391,7 +391,7 @@ const lecture01: LectureContent = {
       question: "Which is one of the reasons given for choosing Android as a platform?",
       options: options("Each app must be certified before a developer can publish it", "Built-in apps can never be replaced", "It is tied to a single manufacturer's devices", "There are no licensing fees, which enables low-cost devices"),
       correctOptionId: "d",
-      explanation: "The lecture lists no licensing fees, no developer certification, apps being created equal (built-ins can be replaced), and not being tied to a single device.",
+      explanation: "Reasons to choose Android include no licensing fees, no developer certification, apps being created equal (built-ins can be replaced), and not being tied to a single device.",
     },
     {
       id: "l01-q16",

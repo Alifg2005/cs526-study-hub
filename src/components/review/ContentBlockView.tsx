@@ -3,9 +3,9 @@ import type { CalloutTone, ContentBlock } from "../../types/content";
 import { cn } from "../../lib/cn";
 
 const calloutStyle: Record<CalloutTone, { label: string; className: string; Icon: typeof Info }> = {
-  exam: { label: "Exam focus", className: "border-accent/40 bg-accent-soft/60", Icon: Target },
+  exam: { label: "Practice angle", className: "border-accent/40 bg-accent-soft/60", Icon: Target },
   note: { label: "Note", className: "border-line-strong bg-surface-2", Icon: Info },
-  supplement: { label: "Beyond the slides", className: "border-warning/40 bg-warning-soft/50", Icon: Lightbulb },
+  supplement: { label: "Good to know", className: "border-warning/40 bg-warning-soft/50", Icon: Lightbulb },
 };
 
 export function ContentBlockView({ block }: { block: ContentBlock }) {

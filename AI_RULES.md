@@ -7,11 +7,11 @@ The permanent rulebook for every AI coding session on this repository.
 
 ## 1. Project purpose and scope
 
-CS526 Study Hub is an independent exam-preparation website for **Ali Feras Alghanim**, built for **CS526: Mobile Application Development** (Midterm: Monday, October 26, 2026, 12:00 PM).
+CS526 Study Hub is an independent course-revision website for **Ali Feras Alghanim**, built for **CS526: Mobile Application Development**.
 
 It offers, for each lecture:
 
-- an original review page (overview, objectives, key terms, explanations, tables, exam takeaways),
+- an original review page (overview, objectives, key terms, explanations, tables, key takeaways),
 - essay and short-answer practice with model answers,
 - a revision checklist,
 - a 20-question multiple-choice quiz with scoring and explanations.
@@ -51,7 +51,7 @@ src/
     helpers.ts            options() helper for MCQs
     lectures/             one content module per available lecture + index.ts
   hooks/                  useQuiz, useProgress, useDocumentTitle
-  lib/                    pure logic: scoring, quiz-state, validate-content, lectures, theme, storage, progress, shuffle, exam, constants
+  lib/                    pure logic: scoring, quiz-state, validate-content, lectures, theme, storage, progress, shuffle, constants
   pages/                  HomePage, LecturePage, QuizPage, EssayPrepPage, NotFoundPage
   styles/index.css        tokens + base styles
   types/content.ts        content schema
@@ -113,7 +113,8 @@ Before writing a component, search `src/components`. Reuse `Button`/`ButtonLink`
 - Do not paste full slides, long passages, or the extracted text into the site. Short technical identifiers (API names, attribute names, method signatures) and short illustrative code you write yourself are fine.
 - Code examples are labeled "Illustrative example" and should be written fresh, not copied from slides.
 - Do not present notes as official or lecturer-authored. Keep the educational-use notice in the footer.
-- Anything that goes beyond what the slides state must be marked with a `callout` of tone `"supplement"` (rendered as "Beyond the slides").
+- Supplementary explanations use a `callout` of tone `"supplement"` (rendered as "Good to know").
+- Write as an independent study resource: state facts directly, in neutral academic language. Do not write "the lecture says", "according to the slides" or similar, and do not predict exam questions. Practice tips use tone `"exam"` (rendered as "Practice angle").
 
 ## 10. Source extraction requirements
 

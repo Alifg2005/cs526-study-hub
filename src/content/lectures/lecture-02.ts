@@ -4,8 +4,8 @@ import { options } from "../helpers";
 const lecture02: LectureContent = {
   lectureId: "lecture-02",
   overview: [
-    "Every Android screen is drawn from a tree of View and ViewGroup objects. This lecture explains that hierarchy, how it is described in XML layout resources, and how Java code reaches into the layout through the generated R class and findViewById.",
-    "Most of the lecture tours the common layout containers: LinearLayout and its five areas of control, RelativeLayout's positioning attributes, TableLayout, FrameLayout and ConstraintLayout. It closes with the app bar and the steps for building an options menu.",
+    "Every Android screen is drawn from a tree of View and ViewGroup objects. These notes explain that hierarchy, how it is described in XML layout resources, and how Java code reaches into the layout through the generated R class and findViewById.",
+    "Most of this topic tours the common layout containers: LinearLayout and its five areas of control, RelativeLayout's positioning attributes, TableLayout, FrameLayout and ConstraintLayout. It closes with the app bar and the steps for building an options menu.",
   ],
   objectives: [
     { id: "l02-o1", text: "Explain View, ViewGroup and the view hierarchy behind an activity's window." },
@@ -43,7 +43,7 @@ const lecture02: LectureContent = {
           ],
         },
         { type: "paragraph", text: "You can declare a layout in two ways: declare UI elements in XML using a vocabulary that mirrors the View classes, or instantiate View and ViewGroup objects at run time in code." },
-        { type: "callout", tone: "exam", title: "Exam angle", text: "A favourite short question: state the difference between View and ViewGroup, and give an example of each (Button versus LinearLayout)." },
+        { type: "callout", tone: "exam", text: "Practice question: state the difference between View and ViewGroup, and give an example of each (Button versus LinearLayout)." },
       ],
     },
     {
@@ -72,7 +72,7 @@ const lecture02: LectureContent = {
       id: "plumbing",
       title: "Attaching layouts to Java code",
       blocks: [
-        { type: "paragraph", text: "The lecture calls this the plumbing: you connect XML elements to equivalent Java objects so code can manipulate the UI." },
+        { type: "paragraph", text: "Think of this as the plumbing: you connect XML elements to equivalent Java objects so code can manipulate the UI." },
         {
           type: "steps",
           items: [
@@ -125,14 +125,14 @@ const lecture02: LectureContent = {
           ],
         },
         { type: "callout", tone: "exam", title: "Worked example", text: "If a TextView and a Button each have layout_weight=\"1\" and an EditText has layout_weight=\"2\", the EditText receives half of the free space and the other two receive a quarter each." },
-        { type: "callout", tone: "supplement", title: "Beyond the slides", text: "Do not confuse android:layout_gravity, which positions the widget inside its parent, with android:gravity, which positions the content inside the widget. The lecture's examples use both." },
+        { type: "callout", tone: "supplement", text: "Do not confuse android:layout_gravity, which positions the widget inside its parent, with android:gravity, which positions the content inside the widget." },
       ],
     },
     {
       id: "relative",
       title: "RelativeLayout",
       blocks: [
-        { type: "paragraph", text: "RelativeLayout places each widget based on its relationship to other widgets or to the parent container. The lecture describes it as the most flexible traditional layout." },
+        { type: "paragraph", text: "RelativeLayout places each widget based on its relationship to other widgets or to the parent container. It is among the most flexible traditional layouts." },
         {
           type: "table",
           caption: "Positioning relative to another widget",
@@ -285,7 +285,7 @@ const lecture02: LectureContent = {
       question: "A View is responsible for which of the following?",
       options: options("Drawing and event handling within a rectangular area of the screen", "Managing the activity back stack and the order in which screens appear", "Compiling the project's resources into the generated R.java class", "Starting other activities"),
       correctOptionId: "a",
-      explanation: "The lecture defines a View as occupying a rectangular area on screen and being responsible for drawing and event handling.",
+      explanation: "A View occupies a rectangular area on screen and is responsible for drawing and event handling.",
     },
     {
       id: "l02-q03",
@@ -366,7 +366,7 @@ const lecture02: LectureContent = {
       question: "By default, how are widgets aligned inside a LinearLayout before any gravity is set?",
       options: options("Left- and top-aligned", "Centered horizontally and vertically", "Right- and bottom-aligned", "Stretched to fill the screen"),
       correctOptionId: "a",
-      explanation: "The lecture states that widgets are left- and top-aligned by default; android:layout_gravity changes this.",
+      explanation: "Widgets are left- and top-aligned by default; android:layout_gravity changes this.",
     },
     {
       id: "l02-q12",
@@ -435,7 +435,7 @@ const lecture02: LectureContent = {
       id: "l02-q19",
       objectiveId: "l02-o6",
       kind: "comparison",
-      question: "Why does the lecture recommend ConstraintLayout over deeply nested traditional layouts?",
+      question: "Why is ConstraintLayout recommended over deeply nested traditional layouts?",
       options: options("It is the only layout that can be declared in XML rather than built in code", "It produces a flat view hierarchy, and nesting is bad for performance", "It automatically creates TableRows", "It removes the need to give widgets IDs because positions are absolute"),
       correctOptionId: "b",
       explanation: "Simple screens built from LinearLayout or RelativeLayout often require nesting, which hurts performance. ConstraintLayout keeps the hierarchy flat.",

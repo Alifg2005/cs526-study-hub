@@ -17,7 +17,6 @@ export const lectureRegistry: LectureMeta[] = [
     description:
       "Why mobile is its own paradigm: device strengths and limits, web apps versus native apps, the origins of Android and the Open Handset Alliance, and the parts of an Android project.",
     status: "available",
-    inMidtermScope: true,
   },
   {
     id: "lecture-02",
@@ -28,7 +27,6 @@ export const lectureRegistry: LectureMeta[] = [
     description:
       "Views, ViewGroups and XML layouts; connecting layouts to Java with R and findViewById; LinearLayout, RelativeLayout, TableLayout, FrameLayout and ConstraintLayout; the app bar and options menu.",
     status: "available",
-    inMidtermScope: true,
   },
   {
     id: "lecture-03",
@@ -39,7 +37,6 @@ export const lectureRegistry: LectureMeta[] = [
     description:
       "What the Android SDK provides and the layers of the software stack: applications, the application framework and its managers, native libraries, the runtime, and the Linux kernel.",
     status: "available",
-    inMidtermScope: true,
   },
   {
     id: "lecture-04",
@@ -50,7 +47,6 @@ export const lectureRegistry: LectureMeta[] = [
     description:
       "Application building blocks, the manifest, externalized and alternative resources, process priority and termination, and the four steps for implementing an Activity.",
     status: "available",
-    inMidtermScope: true,
   },
   {
     id: "lecture-05",
@@ -61,7 +57,6 @@ export const lectureRegistry: LectureMeta[] = [
     description:
       "Intents as Android's message-passing mechanism: explicit versus implicit intents, intent resolution and the app chooser, actions and data URIs, and passing data with extras and Bundles.",
     status: "available",
-    inMidtermScope: true,
   },
   {
     id: "lecture-06",
@@ -72,7 +67,6 @@ export const lectureRegistry: LectureMeta[] = [
     description:
       "The activity stack, activity states, the seven lifecycle callbacks and when each runs, the entire, visible and foreground lifetimes, and manifest elements that launch an activity.",
     status: "available",
-    inMidtermScope: true,
   },
   {
     id: "lecture-07-part-1",
@@ -84,7 +78,6 @@ export const lectureRegistry: LectureMeta[] = [
     description:
       "Fragments as reusable, self-contained portions of an activity's UI: design philosophy, properties, creating a fragment, the fragment lifecycle, and adding fragments statically in XML.",
     status: "available",
-    inMidtermScope: true,
   },
   {
     id: "lecture-07-part-2",
@@ -96,6 +89,5 @@ export const lectureRegistry: LectureMeta[] = [
     description:
       "Dynamic fragments managed at run time: the FragmentManager, fragment transactions (add, replace, remove), commit, and the back stack.",
     status: "available",
-    inMidtermScope: true,
   },
 ];

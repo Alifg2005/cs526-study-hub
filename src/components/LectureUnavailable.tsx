@@ -13,8 +13,8 @@ export function LectureUnavailable({ meta }: { meta: LectureMeta }) {
       <p className="mt-6 text-sm font-semibold text-ink-muted">{lectureLabel(meta)}</p>
       <h1 className="mt-2 text-3xl font-semibold sm:text-4xl">{meta.title}</h1>
       <p className="mx-auto mt-4 max-w-[46ch] leading-relaxed text-ink-muted">
-        Coming soon. The review notes and quiz for this lecture will be published after its source material is
-        processed and checked.
+        Coming soon. The review notes and quiz for this lecture will be published once they are
+        ready.
       </p>
       <div className="mt-8">
         <ButtonLink to="/" variant="secondary">

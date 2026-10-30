@@ -23,8 +23,6 @@ export interface LectureMeta {
   /** One or two sentences describing what the lecture covers (source-grounded). */
   description: string;
   status: LectureStatus;
-  /** True when the lecture is in the announced midterm scope. */
-  inMidtermScope: boolean;
 }
 
 export interface LearningObjective {
@@ -39,9 +37,9 @@ export interface KeyTerm {
 
 /**
  * Callout tones:
- * - "exam": an exam-focused tip grounded in the lecture.
- * - "note": a clarification of lecture content.
- * - "supplement": explanation that goes beyond what the slides state.
+ * - "exam": a practice tip (rendered as "Practice angle"); never predicts exam questions.
+ * - "note": a clarification of the material.
+ * - "supplement": supplementary explanation (rendered as "Good to know").
  *   Always use this tone for supplementary material so readers can tell it apart.
  */
 export type CalloutTone = "exam" | "note" | "supplement";

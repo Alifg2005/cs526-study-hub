@@ -17,7 +17,7 @@ export function EssayPrepPage() {
       <header className="max-w-[68ch] pb-8 pt-10 md:pt-14">
         <h1 className="text-4xl font-semibold leading-[1.08] sm:text-5xl">Essay and short-answer practice</h1>
         <p className="mt-4 text-lg leading-relaxed text-ink-muted">
-          {total} practice questions written from the lectures, each with a model answer, keywords and what a strong
+          {total} practice questions, each with a model answer, keywords and what a strong
           answer covers. They are for preparation only and are not guaranteed exam questions.
         </p>
       </header>

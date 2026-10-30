@@ -4,8 +4,8 @@ import { options } from "../helpers";
 const lecture03: LectureContent = {
   lectureId: "lecture-03",
   overview: [
-    "This lecture opens the box on Android. It first lists what the Android SDK gives a developer, then works through the Android software stack layer by layer, from the applications the user sees down to the Linux kernel that talks to the hardware.",
-    "The middle of the stack gets the most attention: the application framework and its managers, the native C and C++ libraries, and the runtime with its core Java libraries. Knowing which layer owns which job is the heart of this lecture.",
+    "This topic opens the box on Android. It first lists what the Android SDK gives a developer, then works through the Android software stack layer by layer, from the applications the user sees down to the Linux kernel that talks to the hardware.",
+    "The middle of the stack gets the most attention: the application framework and its managers, the native C and C++ libraries, and the runtime with its core Java libraries. Knowing which layer owns which job is the heart of this topic.",
   ],
   objectives: [
     { id: "l03-o1", text: "List what the Android SDK provides to developers." },
@@ -58,7 +58,7 @@ const lecture03: LectureContent = {
             { title: "Linux kernel", detail: "Memory and process management, the network stack, the driver model and security, abstracting the hardware." },
           ],
         },
-        { type: "callout", tone: "exam", title: "Exam angle", text: "Practice drawing the four layers from memory and placing each component in the right layer. A common mistake is to put SQLite in the application framework; it is a native library." },
+        { type: "callout", tone: "exam", text: "Practice drawing the four layers from memory and placing each component in the right layer. A common mistake is to put SQLite in the application framework; it is a native library." },
       ],
     },
     {
@@ -69,7 +69,7 @@ const lecture03: LectureContent = {
           type: "list",
           items: [
             "Contains all applications, both native apps and user-installed apps.",
-            "Applications are written in Java (the lecture's wording; Kotlin is also used today).",
+            "Applications are written in Java or Kotlin.",
             "Built-in apps can be replaced by other apps.",
             "Android ships core applications: an email client, SMS program, calendar, maps, browser and contacts.",
             "Play Store apps span categories such as entertainment, productivity, personalization, education and communication.",
@@ -97,7 +97,7 @@ const lecture03: LectureContent = {
             ["Notification Manager", "Lets all apps alert the user to important events with status bar alerts, flashing lights and vibration"],
           ],
         },
-        { type: "callout", tone: "note", text: "The lecture notes that GPS is the most accurate location source, but it is slow, drains the battery and is mainly for outdoor use. Location Manager enables context-specific tasks such as finding directions from the current location." },
+        { type: "callout", tone: "note", text: "GPS is the most accurate location source, but it is slow, drains the battery and is mainly for outdoor use. Location Manager enables context-specific tasks such as finding directions from the current location." },
       ],
     },
     {
@@ -128,7 +128,7 @@ const lecture03: LectureContent = {
         { type: "paragraph", text: "The runtime's core libraries provide most of the functionality of the core Java libraries: APIs, data structures, utilities, file access, network access and graphics." },
         {
           type: "table",
-          caption: "Package families named in the lecture",
+          caption: "Core package families",
           columns: ["Packages", "Used for"],
           rows: [
             ["java.*, javax.*", "Basic Java classes such as data structures, file I/O and concurrency"],
@@ -136,14 +136,14 @@ const lecture03: LectureContent = {
             ["org.*", "Internet and web services"],
           ],
         },
-        { type: "callout", tone: "supplement", title: "Beyond the slides", text: "The runtime that executes app code was historically the Dalvik virtual machine (Lecture 4 mentions each app running its own Dalvik instance). Modern Android uses ART, the Android Runtime, which plays the same role in the stack." },
+        { type: "callout", tone: "supplement", text: "The runtime that executes app code was historically the Dalvik virtual machine (older Android versions ran each app in its own Dalvik instance). Modern Android uses ART, the Android Runtime, which plays the same role in the stack." },
       ],
     },
     {
       id: "kernel",
       title: "Linux kernel",
       blocks: [
-        { type: "paragraph", text: "Android relies on the Linux kernel (version 2.6, and later 3.0, in the lecture's diagrams) for core system services and as an abstraction layer between the hardware and the rest of the stack." },
+        { type: "paragraph", text: "Android relies on the Linux kernel (historically versions 2.6 and 3.0) for core system services and as an abstraction layer between the hardware and the rest of the stack." },
         {
           type: "table",
           columns: ["Kernel services", "Advantages of building on Linux"],
@@ -245,7 +245,7 @@ const lecture03: LectureContent = {
       id: "l03-q01",
       objectiveId: "l03-o1",
       kind: "concept",
-      question: "According to the lecture, what is the core of the Android SDK?",
+      question: "What is the core of the Android SDK?",
       options: options("The Android Emulator", "The Android API libraries that give access to the Android stack", "The online developer community and the forums run by Google's Android team", "The collection of sample applications that demonstrate individual APIs"),
       correctOptionId: "b",
       explanation: "The Android APIs are described as the core of the SDK, and they are the same libraries Google uses to create native apps.",
@@ -275,7 +275,7 @@ const lecture03: LectureContent = {
       question: "Which statement about the applications layer is correct?",
       options: options("Built-in applications can be replaced by other apps", "Only Google may write apps for this layer", "Applications in this layer are written in C", "Applications here talk directly to device drivers"),
       correctOptionId: "a",
-      explanation: "The lecture states that apps in this layer are written in Java and can replace built-in apps. Apps reach hardware through the framework, not directly.",
+      explanation: "Apps in this layer are written in Java or Kotlin and can replace built-in apps. Apps reach hardware through the framework, not directly.",
     },
     {
       id: "l03-q05",
@@ -311,7 +311,7 @@ const lecture03: LectureContent = {
       question: "A messaging app wants to read the phone's address book contacts, which belong to another app. Which framework component makes this possible?",
       options: options("View System", "Content Provider", "Window Manager", "Activity Manager"),
       correctOptionId: "b",
-      explanation: "Content Providers let apps access data from other apps or share their own data, with the address book as the lecture's example.",
+      explanation: "Content Providers let apps access data from other apps or share their own data, such as the address book.",
     },
     {
       id: "l03-q09",
@@ -344,7 +344,7 @@ const lecture03: LectureContent = {
       id: "l03-q12",
       objectiveId: "l03-o4",
       kind: "concept",
-      question: "According to the lecture, which statement about GPS as a location source is accurate?",
+      question: "Which statement about GPS as a location source is accurate?",
       options: options("It is the least accurate location source, but it uses almost no battery and works indoors", "It works best indoors", "It is the most accurate source but is slow, drains the battery and is mainly for outdoor use", "It is only available to apps through the Notification Manager and the status bar"),
       correctOptionId: "c",
       explanation: "The Location Manager can use GPS, Wi-Fi databases or cell towers. GPS is the most accurate but slow, battery-hungry and mostly for outdoor use.",
@@ -419,7 +419,7 @@ const lecture03: LectureContent = {
       question: "Which is listed as an advantage of building Android on the Linux kernel?",
       options: options("It removes the need for device drivers, because Linux talks to all hardware directly", "Portability, because it is easy to compile on different hardware architectures", "It lets apps skip the application framework", "It makes all apps run in a single shared process so they can share memory freely"),
       correctOptionId: "b",
-      explanation: "The lecture lists security, power management, memory management, interprocess communication and portability. Linux provides a secure multi-process environment rather than a single shared process.",
+      explanation: "Advantages include security, power management, memory management, interprocess communication and portability. Linux provides a secure multi-process environment rather than a single shared process.",
     },
   ],
 };

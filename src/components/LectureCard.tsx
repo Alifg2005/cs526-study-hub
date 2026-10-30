@@ -50,7 +50,7 @@ export function LectureCard({ lecture, progress }: LectureCardProps) {
         {meta.part && <span className="ml-2 align-middle text-sm font-medium text-ink-muted">{meta.part}</span>}
       </h3>
       <p className="mt-2 flex-1 text-[0.95rem] leading-relaxed text-ink-muted">
-        {ready ? meta.description : "This lecture's review and quiz will appear once its source material has been processed."}
+        {ready ? meta.description : "This lecture's review and quiz will appear here once they are ready."}
       </p>
 
       {ready && (
