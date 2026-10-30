@@ -4,7 +4,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "../lib/cn";
 
 export const EDUCATIONAL_NOTICE =
-  "Independent student study resource for CS526. Course materials remain the property of their respective rights holders. This website provides original study notes and practice questions and is not an official university website.";
+  "Independent student study resource for CS526. Course materials remain the property of their respective rights holders. This website provides original study notes and practice questions and is not an official university website. AI-assisted content; verify with your course materials.";
 
 function ScrollToTop() {
   const { pathname } = useLocation();

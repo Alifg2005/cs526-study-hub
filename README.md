@@ -2,7 +2,7 @@
 
 An independent study website for **CS526: Mobile Application Development**, built by **Ali Feras Alghanim** for course revision.
 
-> Independent student study resource for CS526. Course materials remain the property of their respective rights holders. This website provides original study notes and practice questions and is not an official university website.
+> Independent student study resource for CS526. Course materials remain the property of their respective rights holders. This website provides original study notes and practice questions and is not an official university website. AI-assisted content; verify with your course materials.
 
 ## Features
 
@@ -16,16 +16,16 @@ An independent study website for **CS526: Mobile Application Development**, buil
 
 ### Lectures
 
-| # | Lecture | Status |
-| --- | --- | --- |
-| 1 | Mobile Application Trends | Available |
-| 2 | Building User Interface | Available |
-| 3 | Android Architecture Stack | Available |
-| 4 | Creating Applications and Activities | Available |
-| 5 | Intents | Available |
-| 6 | Activity Lifecycle | Available |
-| 7.1 | Fragments, Part 1 | Available |
-| 7.2 | Fragments, Part 2 | Available |
+| #   | Lecture                              | Status    |
+| --- | ------------------------------------ | --------- |
+| 1   | Mobile Application Trends            | Available |
+| 2   | Building User Interface              | Available |
+| 3   | Android Architecture Stack           | Available |
+| 4   | Creating Applications and Activities | Available |
+| 5   | Intents                              | Available |
+| 6   | Activity Lifecycle                   | Available |
+| 7.1 | Fragments, Part 1                    | Available |
+| 7.2 | Fragments, Part 2                    | Available |
 
 ## Technology stack
 
@@ -121,15 +121,15 @@ The full manual procedure is in [`ADD_CHAPTER.md`](ADD_CHAPTER.md). Adding a lec
 2. In Vercel, choose **Add New > Project** and import the repository.
 3. Confirm the settings (they are also declared in `vercel.json`):
 
-   | Setting | Value |
-   | --- | --- |
-   | Framework Preset | Vite |
-   | Root Directory | repository root (`./`) |
-   | Install Command | `npm install` |
-   | Build Command | `npm run build` |
-   | Output Directory | `dist` |
-   | Environment Variables | none |
-   | Node.js version | 22.x or newer (from `engines`) |
+   | Setting               | Value                          |
+   | --------------------- | ------------------------------ |
+   | Framework Preset      | Vite                           |
+   | Root Directory        | repository root (`./`)         |
+   | Install Command       | `npm install`                  |
+   | Build Command         | `npm run build`                |
+   | Output Directory      | `dist`                         |
+   | Environment Variables | none                           |
+   | Node.js version       | 22.x or newer (from `engines`) |
 
 4. Deploy. Vercel builds without the source PDFs; the safety scan still runs on its output.
 5. Open the generated URL and check a nested route such as `/lectures/05/quiz` with a browser refresh; `vercel.json` rewrites it to the app.
